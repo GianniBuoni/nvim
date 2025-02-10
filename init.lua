@@ -43,5 +43,3 @@ key.set("n", "<leader>lp", "<cmd>LspRestart<cr>")
 
 -- imports
 require("config.lazy")
-
-print("⚡ NeoVim config successfully loaded!")

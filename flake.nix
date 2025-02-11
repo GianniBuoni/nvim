@@ -15,11 +15,10 @@
   in {
     devShells.${system}.default = pkgs.mkShell {
       # set alternate config to keep main config from breaking
-      NVIM_APPNAME = "nvim-lua";
+      # NVIM_APPNAME = "nvim-lua";
 
       # required packages: parsers and lsps
       packages = with pkgs; [
-        vimPlugins.nvim-treesitter-parsers.nix
         lua-language-server
         nil
       ];

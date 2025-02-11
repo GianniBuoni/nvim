@@ -22,6 +22,7 @@ vim.opt.undofile = true
 vim.opt.number = true
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.laststatus = 3       -- global status line
 vim.opt.inccommand = "split" -- create split for sed commnand
 vim.opt.cursorline = true
 vim.opt.scrolloff = 10

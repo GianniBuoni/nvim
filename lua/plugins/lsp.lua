@@ -41,6 +41,7 @@ return {
       -- keybindings
       vim.keymap.set("n", "<leader>D", vim.lsp.buf.definition, { desc = "LSP [D]efinition" })
       vim.keymap.set("n", "<leader>d", vim.diagnostic.goto_next, { desc = "[d]iagnostic" })
+      vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { desc = "[Q]uickfix" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP [C]ode [A]ction" })
 
       -- float border
@@ -58,23 +59,6 @@ return {
       vim.diagnostic.config {
         float = { border = border }
       }
-
-      -- format on save
-      vim.api.nvim_create_autocmd("LspAttach", {
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          if not client then return end
-
-          if client.supports_method("textDocument/formatting") then
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = args.buffer,
-              callback = function()
-                vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
-              end,
-            })
-          end
-        end
-      })
     end
   }
 }

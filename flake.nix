@@ -19,6 +19,7 @@
 
       # required packages: parsers and lsps
       packages = with pkgs; [
+        nodePackages.prettier
         lua-language-server
         nil
       ];

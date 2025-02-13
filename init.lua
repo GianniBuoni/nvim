@@ -41,6 +41,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- general keybindings
 key.set("n", "<c-w>", "<cmd>vnew<cr>")
 key.set("n", "<leader>lp", "<cmd>LspRestart<cr>")
+key.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- imports
 require("config.lazy")

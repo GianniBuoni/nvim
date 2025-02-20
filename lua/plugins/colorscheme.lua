@@ -1,5 +1,35 @@
 return {
   {
+    "catppuccin/nvim",
+    enabled = false,
+    name = "catppuccin",
+    config = function()
+      local catppuccin = require("catppuccin")
+      catppuccin.setup()
+      vim.cmd("colorscheme catppuccin-mocha")
+    end
+  },
+  {
+    "Mofiqul/dracula.nvim",
+    enabled = true,
+    name = "dracula",
+    config = function()
+      local dracula = require("dracula")
+      dracula.setup()
+      vim.cmd("colorscheme dracula")
+    end
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    enabled = false,
+    name = "gruvbox",
+    config = function()
+      local gruvbox = require("gruvbox")
+      gruvbox.setup()
+      vim.cmd("colorscheme gruvbox")
+    end
+  },
+  {
     "rose-pine/neovim",
     enabled = false,
     name = "rose-pine",
@@ -10,15 +40,5 @@ return {
       }
       vim.cmd("colorscheme rose-pine")
     end
-
   },
-  {
-    "Mofiqul/dracula.nvim",
-    name = "dracula",
-    config = function()
-      local dracula = require("dracula")
-      dracula.setup()
-      vim.cmd("colorscheme dracula")
-    end
-  }
 }

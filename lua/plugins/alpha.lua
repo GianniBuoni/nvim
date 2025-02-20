@@ -20,6 +20,8 @@ return {
           theme.header,
           theme.spacer,
           theme.buttons,
+          theme.spacer,
+          theme.footer,
         }
       }
     end

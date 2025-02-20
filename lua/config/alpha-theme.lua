@@ -25,7 +25,7 @@ local footer = {
 
 local top_margin = {
   type = "padding",
-  val = 7,
+  val = 10,
 }
 
 local spacer = {

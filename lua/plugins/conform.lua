@@ -19,10 +19,12 @@ return {
         format_on_save = {},
       }
 
+      -- define filetypes -> formatter table
       for ft, ft_config in pairs(opts.prettier_ft) do
         ft_config = { "prettier" }
         config.formatters_by_ft[ft] = ft_config
       end
+      config.formatters_by_ft.nix = { "alejandra" }
 
 
       -- format on save

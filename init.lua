@@ -28,6 +28,8 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.winborder = "rounded" -- add border to windows
+
 
 -- highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {

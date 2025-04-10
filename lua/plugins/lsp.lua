@@ -50,17 +50,10 @@ return {
       local border = "single"
       local handlers = { "textDocument/hover", "textDocument/signatureHelp" }
 
-      for _, handler in ipairs(handlers) do
-        vim.lsp.handlers[handler] = vim.lsp.with(
-          vim.lsp.handlers.hover, {
-            border = border
-          }
-        )
-      end
-
       vim.diagnostic.config {
         float = { border = border }
       }
+
     end
   }
 }

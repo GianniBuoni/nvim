@@ -40,20 +40,15 @@ return {
       end
 
       -- keybindings
+      local jump_diagnostic = function()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end
+
       vim.keymap.set("n", "<leader>D", vim.lsp.buf.definition, { desc = "LSP [D]efinition" })
-      vim.keymap.set("n", "<leader>d", vim.diagnostic.goto_next, { desc = "[d]iagnostic" })
+      vim.keymap.set("n", "<leader>d", jump_diagnostic, { desc = "[d]iagnostic" })
       vim.keymap.set("n", "<leader>q", vim.diagnostic.setqflist, { desc = "[Q]uickfix" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "LSP [C]ode [A]ction" })
       vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { desc = "LSP [R]ename" })
-
-      -- float border
-      local border = "single"
-      local handlers = { "textDocument/hover", "textDocument/signatureHelp" }
-
-      vim.diagnostic.config {
-        float = { border = border }
-      }
-
     end
   }
 }

@@ -1,6 +1,6 @@
 return {
   "kdheepak/lazygit.nvim",
-  lazy = true,
+  lazy = false,
   cmd = {
     "LazyGit",
     "LazyGitConfig",
@@ -8,18 +8,10 @@ return {
     "LazyGitFilter",
     "LazyGitFilterCurrentFile",
   },
-  dependencies = {
-    "nvim-telescope/telescope.nvim",
-    "nvim-lua/plenary.nvim",
-  },
   keys = {
     { "<leader>ll", "<cmd>LazyGit<cr>", desc = "LazyGit" }
   },
   config = function()
-    local telescope = require("telescope")
-    telescope.load_extension("lazygit")
-
-    local border = "none"
-    vim.o.winborder = border
-  end,
+    vim.g.lazygit_floating_window_border_chars = { "", "", "", "", "", "", "", "" }
+  end
 }
